@@ -2,11 +2,7 @@ import React from "react";
 
 import Resume from "../../components/Resume/";
 
-import settings from "../../settings";
-
-const Admin = () => {
-  const { resume } = settings;
-
+const Admin = ({ resume, loading }) => {
   return (
     <div className="admin">
       <div className="d-flex justify-content-between mb-3">
@@ -18,7 +14,7 @@ const Admin = () => {
           Save
         </button>
       </div>
-      <Resume resume={resume} editable />
+      {!loading && <Resume resume={resume} editable />}
     </div>
   );
 };

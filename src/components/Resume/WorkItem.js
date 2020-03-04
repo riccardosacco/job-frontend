@@ -15,6 +15,7 @@ const toggleDescription = e => {
 
 const isToday = someDate => {
   const today = new Date();
+  someDate = new Date(someDate);
   return (
     someDate.getDate() === today.getDate() &&
     someDate.getMonth() === today.getMonth() &&
@@ -23,6 +24,8 @@ const isToday = someDate => {
 };
 
 const dateDiff = (from, to) => {
+  from = new Date(from);
+  to = new Date(to);
   const diff = Math.floor(to.getTime() - from.getTime());
   const day = 1000 * 60 * 60 * 24;
 
@@ -43,6 +46,7 @@ const dateDiff = (from, to) => {
 };
 
 const formatDate = date => {
+  date = new Date(date);
   const months = [
     "january",
     "february",
