@@ -1,0 +1,34 @@
+.skills {
+  .skills-container {
+    .skills-topic {
+      margin-bottom: 0.5rem;
+      .skill-title {
+        font-weight: bold;
+        font-family: $font-family-heading;
+        @include media-breakpoint-down(sm) {
+          & {
+            font-size: 1.25rem;
+          }
+        }
+      }
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 0.75rem;
+          color: $resume-text-color-alt;
+          margin-bottom: 0.25rem;
+          @include media-breakpoint-down(sm) {
+            & {
+              font-size: 1rem;
+            }
+          }
+          svg {
+            margin-right: 0.25rem;
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+// Variables
+$resume-background: invert($primary-color);
+$resume-text-color: invert($text-color);
+$resume-text-color-alt: rgba($resume-text-color, 0.6);
+$resume-divider-color: rgba($resume-text-color, 0.2);
+
+.resume {
+  .resume-button {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+.resume-document {
+  padding: 3rem;
+  background-color: $resume-background;
+  color: $resume-text-color;
+  border: 1px solid #ccc;
+  @include media-breakpoint-down(sm) {
+    & {
+      padding: 1.5rem;
+    }
+  }
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    @include media-breakpoint-down(sm) {
+      & {
+        flex-direction: column;
+      }
+    }
+    .resume-title {
+      .resume-name {
+        font-size: 2.75rem;
+        margin-bottom: 0;
+        @include media-breakpoint-down(md) {
+          & {
+            font-size: 2rem;
+          }
+        }
+        @include media-breakpoint-down(sm) {
+          & {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+          }
+        }
+      }
+      .resume-tagline {
+        font-size: 1.25rem;
+        color: $resume-text-color-alt;
+        @include media-breakpoint-down(sm) {
+          & {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .resume-contacts {
+      ul {
+        list-style: none;
+        font-size: 0.75rem;
+
+        li {
+          margin: 0.1rem 0;
+          a {
+            color: $resume-text-color;
+            display: flex;
+            align-items: center;
+            span {
+              color: $resume-text-color-alt;
+              transition: 0.5s;
+              &:hover {
+                color: $resume-text-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .resume-intro {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 1.5rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid $resume-divider-color;
+    border-bottom: 1px solid $resume-divider-color;
+    @include media-breakpoint-down(sm) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+    .resume-bio {
+      font-size: 0.85rem;
+      color: $resume-text-color-alt;
+    }
+    .resume-img {
+      max-width: 8rem;
+      @include media-breakpoint-down(sm) {
+        & {
+          display: none;
+        }
+      }
+    }
+  }
+  .resume-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2rem;
+    @include media-breakpoint-down(sm) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+    .resume-section-heading {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      padding-left: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      border-left: 4px solid $resume-text-color-alt;
+      @include media-breakpoint-down(sm) {
+        & {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@import "workitem";
+
+@import "skills";
+
+@import "education";
+
+@import "languages";
+
+@import "interests";
+
+@import "print";

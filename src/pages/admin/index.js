@@ -1,0 +1,26 @@
+import React from "react";
+
+import Resume from "../../components/Resume/";
+
+import settings from "../../settings";
+
+const Admin = () => {
+  const { resume } = settings;
+
+  return (
+    <div className="admin">
+      <div className="d-flex justify-content-between mb-3">
+        <h3>Modify resume</h3>
+        <button
+          className="btn btn-success"
+          onClick={e => alert("Resume saved!")}
+        >
+          Save
+        </button>
+      </div>
+      <Resume resume={resume} editable />
+    </div>
+  );
+};
+
+export default Admin;
